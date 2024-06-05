@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title><%= fighter.name %></title>
+  </head>
+  <body>
+    <h1><%= fighter.name %></h1>
+    <p>Division: <%= fighter.division %></p>
+    <p>
+      Ranking: <%= fighter.rank !== "undefined" ? fighter.rank : "Unranked" %>
+    </p>
+    <p>
+      Record: <%= fighter.wins %> - <%= fighter.losses %> - <%=
+      fighter.no_contest %>
+    </p>
+    <p><strong><%= fighter.isActive ? "Active" : "Inactive" %></strong></p>
+    <form action="/fighters/<%= fighter._id %>?_method=DELETE" method="POST">
+      <button type="submit">Delete <%= fighter.name %></button>
+    </form>
+    <a href="/fighters/<%= fighter._id %>/edit">Update fighter</a>
+    <a href="/fighters">Back to fighters</a>
+  </body>
+</html>

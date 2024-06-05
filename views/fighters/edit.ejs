@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Edit <%= fighter.name %></title>
+  </head>
+  <body>
+    <h1>Edit <%= fighter.name %></h1>
+    <form action="/fighters/<%= fighter._id %>?_method=PUT" method="POST">
+      <div>
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          value="<%= fighter.name%>"
+          required
+        />
+      </div>
+      <div>
+        <label for="rank">Ranking:</label>
+        <input type="number" name="rank" id="rank" value="<%= fighter.rank%>" />
+      </div>
+      <div>
+        <label for="division">Division:</label>
+        <input
+          type="text"
+          name="division"
+          id="division"
+          value="<%= fighter.division %>"
+          required
+        />
+      </div>
+      <div>
+        <label for="wins">Wins:</label>
+        <input
+          type="number"
+          name="wins"
+          id="wins"
+          required
+          value="<%=fighter.wins%>"
+        />
+      </div>
+      <div>
+        <label for="losses">Losses:</label>
+        <input
+          type="number"
+          name="losses"
+          id="losses"
+          value="<%=fighter.losses%>"
+          required
+        />
+      </div>
+      <div>
+        <label for="no_contest">No Contest:</label>
+        <input
+          type="number"
+          name="no_contest"
+          id="no_contest"
+          value="<%=fighter.no_contest%>"
+          required
+        />
+      </div>
+      <div>
+        <label for="isActive">Active? </label>
+        <input type="checkbox" name="isActive" id="isActive" <%=
+        fighter.isActive ? "checked" : ""%>/>
+      </div>
+      <div>
+        <button type="submit">Update Fighter</button>
+      </div>
+    </form>
+    <a href="/fighters">Back to fighters</a>
+  </body>
+</html>
