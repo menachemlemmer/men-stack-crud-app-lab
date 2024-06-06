@@ -7,6 +7,7 @@
     <title>Edit <%= fighter.name %></title>
   </head>
   <body>
+    <%- include('../partials/header') %>
     <h1>Edit <%= fighter.name %></h1>
     <form action="/fighters/<%= fighter._id %>?_method=PUT" method="POST">
       <div>

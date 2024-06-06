@@ -10,3 +10,27 @@ body {
   justify-content: center;
   max-width: 100vw;
 }
+
+img {
+  height: 7em;
+}
+
+a {
+  text-decoration: none;
+  color: red;
+  margin: 24px 8px;
+}
+
+button {
+  height: 50px;
+  width: 140px;
+  color: white;
+  background-color: red;
+  border: none;
+  margin: 20px;
+  font-size: large;
+}
+
+li {
+  margin: 8px;
+}
